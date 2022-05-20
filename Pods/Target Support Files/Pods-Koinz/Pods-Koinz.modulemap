@@ -1,0 +1,6 @@
+framework module Pods_Koinz {
+  umbrella header "Pods-Koinz-umbrella.h"
+
+  export *
+  module * { export * }
+}
