@@ -49,15 +49,30 @@ class PhotosViewController: UIViewController {
         }
         .disposed(by: disposeBag)
         
+
+
         
         tableView.rx.willDisplayCell
             .subscribe(onNext: ({ (cell,indexPath) in
                 self.viewModel.nextPage(indexPath: indexPath)
             })).disposed(by: disposeBag)
         
-        
+        tableView
+            .rx
+            .modelAndIndexSelected(PhotoVM.self)
+            .subscribe(onNext: {[weak self] (model, index) in
+                self?.goToImagePreviewVC(image: model.imageURL ?? "")
+            }).disposed(by: disposeBag)
         
         viewModel.getPhotos()
+    }
+    
+    
+    func goToImagePreviewVC(image:String){
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationVC = storyBoard.instantiateViewController(withIdentifier: "ImagePreviewViewController") as! ImagePreviewViewController
+        destinationVC.image = image
+        self.navigationController?.pushViewController(destinationVC, animated: true)
     }
     
 }

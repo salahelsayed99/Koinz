@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 extension Array {
 
@@ -31,5 +33,14 @@ extension UIViewController {
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension Reactive where Base: UITableView {
+    public func modelAndIndexSelected<T>(_ modelType: T.Type) -> ControlEvent<(T, IndexPath)> {
+        ControlEvent(events: Observable.zip(
+            self.modelSelected(modelType),
+            self.itemSelected
+        ))
     }
 }

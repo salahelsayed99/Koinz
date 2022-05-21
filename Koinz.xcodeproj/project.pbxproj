@@ -23,6 +23,7 @@
 		FA9C76792839468700B896CE /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C76782839468700B896CE /* PersistanceService.swift */; };
 		FA9C767B28394F8800B896CE /* ThreadsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C767A28394F8800B896CE /* ThreadsUtility.swift */; };
 		FA9C767D28395EE500B896CE /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C767C28395EE500B896CE /* NetworkReachability.swift */; };
+		FA9C768128396B3200B896CE /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C768028396B3200B896CE /* ImagePreviewViewController.swift */; };
 		FAFC74052837FBF800D5ECB7 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC74042837FBF800D5ECB7 /* PhotosViewController.swift */; };
 		FAFC74072837FD6900D5ECB7 /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC74062837FD6900D5ECB7 /* PhotosViewModel.swift */; };
 		FAFC740A2837FF5D00D5ECB7 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFC74092837FF5D00D5ECB7 /* APIs.swift */; };
@@ -80,6 +81,7 @@
 		FA9C76782839468700B896CE /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
 		FA9C767A28394F8800B896CE /* ThreadsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsUtility.swift; sourceTree = "<group>"; };
 		FA9C767C28395EE500B896CE /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		FA9C768028396B3200B896CE /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		FAFC74042837FBF800D5ECB7 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		FAFC74062837FD6900D5ECB7 /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
 		FAFC74092837FF5D00D5ECB7 /* APIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
@@ -213,6 +215,22 @@
 			path = PersistanceHandler;
 			sourceTree = "<group>";
 		};
+		FA9C767E28396B0500B896CE /* ImagePreview */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C767F28396B1B00B896CE /* ViewController */,
+			);
+			path = ImagePreview;
+			sourceTree = "<group>";
+		};
+		FA9C767F28396B1B00B896CE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA9C768028396B3200B896CE /* ImagePreviewViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		FAFC73FD2837F89700D5ECB7 /* Parents */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +254,7 @@
 		FAFC73FF2837FB9F00D5ECB7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				FA9C767E28396B0500B896CE /* ImagePreview */,
 				FAFC74012837FBAE00D5ECB7 /* Photos */,
 				FAFC74002837FBA600D5ECB7 /* UI */,
 			);
@@ -585,6 +604,7 @@
 				FAFC740A2837FF5D00D5ECB7 /* APIs.swift in Sources */,
 				FA9C76752838E8DF00B896CE /* Extensions.swift in Sources */,
 				FAFC74152838253C00D5ECB7 /* PhotoCellViewModel.swift in Sources */,
+				FA9C768128396B3200B896CE /* ImagePreviewViewController.swift in Sources */,
 				FA230B732836B88000E5E553 /* SceneDelegate.swift in Sources */,
 				FAFC741928382A0700D5ECB7 /* PhotoCell.swift in Sources */,
 				FAFC740F2838025100D5ECB7 /* Constants.swift in Sources */,
@@ -776,6 +796,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -805,6 +826,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
