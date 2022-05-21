@@ -13,6 +13,7 @@ struct Photos: Codable {
 
 // MARK: - PhotosClass
 struct PhotosClass: Codable {
+    let page: Int
     let photo: [Photo]
 }
 

@@ -13,8 +13,9 @@ import RxCocoa
 
 class ProfileViewModel{
     
-    var photos : PublishSubject<[PhotoCellViewModel]> = PublishSubject()
+    var photos = BehaviorRelay(value: [PhotoCellViewModel]())
 
+    var count = 1
     
     private let networkManager: NetworkManager
     
@@ -30,16 +31,24 @@ class ProfileViewModel{
         }
     }
     
-    func getPhotos(page:Int){
-        networkManager.fetchPhotos(page: page) { [weak self] result in
+    func getPhotos(){
+        networkManager.fetchPhotos(page: count) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let response):
-                print(response)
-                self?.photos.onNext(self?.createPhotoTableViewCells(response.photos.photo) ?? [])
+                self.photos.accept(self.photos.value + self.createPhotoTableViewCells(response.photos.photo))
             case .failure(let error):
                 print(error)
             }
         }
+    }
+    
+    func nextPage(indexPath:IndexPath){
+        if indexPath.row == photos.value.count - 1{
+            count+=1
+            getPhotos()
+        }
+        
     }
     
         

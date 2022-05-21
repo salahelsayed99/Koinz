@@ -15,10 +15,9 @@ class PhotoCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    var data:PhotoCellViewModel?{
+    var data:URL?{
         didSet{
-            print(data?.imageURL)
-            photoImage.kf.setImage(with: data?.imageURL)
+            photoImage.kf.setImage(with: data)
         }
     }
     
