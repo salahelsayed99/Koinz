@@ -27,14 +27,14 @@ class PhotosViewController: UIViewController {
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: Constants.photoCell, bundle: nil), forCellReuseIdentifier: Constants.photoCell)
+        tableView.register(UINib(nibName: Constants.adCell, bundle: nil), forCellReuseIdentifier: Constants.adCell)
     }
     
     
     func setUpBinding(){
         
-        
         viewModel.photos.bind(to: tableView.rx.items(cellIdentifier: Constants.photoCell, cellType: PhotoCell.self)) {  (row,photo,cell) in
-                cell.data = photo.imageURL
+            cell.data = photo.imageURL
         }
         .disposed(by: disposeBag)
         
@@ -43,7 +43,7 @@ class PhotosViewController: UIViewController {
             .subscribe(onNext: ({ (cell,indexPath) in
                 self.viewModel.nextPage(indexPath: indexPath)
             })).disposed(by: disposeBag)
-
+        
         
         
         viewModel.getPhotos()

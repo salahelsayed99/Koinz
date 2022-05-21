@@ -26,9 +26,10 @@ class ProfileViewModel{
     
     
     func createPhotoTableViewCells(_ photos:[Photo])->[PhotoCellViewModel]{
-        return photos.map { photo in
-            return PhotoCellViewModel(id: photo.id, secret: photo.secret, server: photo.server, farm: photo.farm)
+        let pcvm = photos.map { photo in
+            return PhotoCellViewModel(id: photo.id, secret: photo.secret, server: photo.server, farm: photo.farm, isAd: false)
         }
+        return pcvm.adding(PhotoCellViewModel(id: "", secret: "", server: "", farm: 0, isAd: true), afterEvery: 5)
     }
     
     func getPhotos(){
