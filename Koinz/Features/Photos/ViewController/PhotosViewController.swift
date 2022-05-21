@@ -31,7 +31,18 @@ class PhotosViewController: UIViewController {
     }
     
     
+    
+    
     func setUpBinding(){
+        
+        viewModel
+            .error
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: {[weak self] (error) in
+                self?.allerMessage(title: "", message: error)
+            })
+            .disposed(by: disposeBag)
+
         
         viewModel.photos.bind(to: tableView.rx.items(cellIdentifier: Constants.photoCell, cellType: PhotoCell.self)) {  (row,photo,cell) in
             cell.data = photo.imageURL

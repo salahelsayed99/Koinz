@@ -15,9 +15,9 @@ class PhotoCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    var data:URL?{
+    var data:String?{
         didSet{
-            photoImage.kf.setImage(with: data)
+            photoImage.kf.setImage(with: URL(string: data ?? ""))
         }
     }
     

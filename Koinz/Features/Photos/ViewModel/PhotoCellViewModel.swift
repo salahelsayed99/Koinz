@@ -14,14 +14,12 @@ struct PhotoCellViewModel {
     var farm:Int
     var isAd:Bool
 
-
-    
-    var imageURL:URL{
+    var imageURL:String{
         get {
             if isAd{
-                return URL(string: "https://mk0adespressoj4m2p68.kinstacdn.com/wp-content/uploads/2020/06/banner-ad-examples-1024x536.jpg")!
+                return "https://mk0adespressoj4m2p68.kinstacdn.com/wp-content/uploads/2020/06/banner-ad-examples-1024x536.jpg"
             }else{
-                return URL(string: "http://farm\(farm).static.flickr.com/\(server)/\(id)_\(secret).jpg")!
+                return "http://farm\(farm).static.flickr.com/\(server)/\(id)_\(secret).jpg"
             }
         }
     }
